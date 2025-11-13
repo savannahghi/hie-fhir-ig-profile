@@ -1,0 +1,92 @@
+# name: Upload SGHI FHIR Implentation Guide(IG) Resources To HAPI FHIR server
+
+# on: [push]
+
+# env:
+#   HAPI_FHIR_BASE_URL: ${{ secrets.HAPI_FHIR_BASE_URL }}
+
+# jobs:
+#   build-and-publish:
+#     if: ${{ github.ref == 'refs/heads/main' }}
+#     runs-on: ubuntu-latest
+    
+#     strategy:
+#       matrix:
+#         environment: [testing, staging, prod]
+
+#     environment:
+#       name: ${{ matrix.environment }}
+    
+#     steps:
+#       - name: Check Repository
+#         uses: actions/checkout@v4
+
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: '18'
+        
+#       - name: Install Dependencies
+#         run: |
+#           sudo apt-get update
+#           sudo apt-get install -y nodejs npm jq
+#           npm install -g fsh-sushi
+
+#       - name: Update sushi-config.yaml
+#         run: |
+#           echo "Replacing default canonical 'https://fhir.slade360.co.ke/fhir' with '${{ env.HAPI_FHIR_BASE_URL }}' in sushi-config.yaml"
+#           sed -i "s|https://fhir.slade360.co.ke/fhir|${{ env.HAPI_FHIR_BASE_URL }}|g" sushi-config.yaml
+#           echo "Updated sushi-config.yaml:"
+#           cat sushi-config.yaml
+
+#       - name: Run SUSHI Build
+#         run: |
+#           sushi -s .
+
+#       - name: Generate FHIR IG and Snapshots
+#         run: |
+#           echo "Generating FHIR Implementation Guide and snapshots..."
+#           ./_updatePublisher.sh
+#           ./_genonce.sh
+#           echo "IG generation and snapshot creation complete."
+          
+#       - name: Publish FHIR Artifacts to HAPI FHIR
+#         run: |
+#           echo "Publishing to server: ${{ env.HAPI_FHIR_BASE_URL }}"
+      
+#           for file in fsh-generated/resources/*.json; do
+#             if [ -f "$file" ]; then
+#               RESOURCE_TYPE=$(jq -r '.resourceType' "$file")
+#               RESOURCE_ID=$(jq -r '.id' "$file")
+
+#               if [ "$RESOURCE_TYPE" = "StructureDefinition" ] || \
+#                 [ "$RESOURCE_TYPE" = "ConceptMap" ] || \
+#                 [ "$RESOURCE_TYPE" = "ValueSet" ] || \
+#                 [ "$RESOURCE_TYPE" = "CodeSystem" ]; then
+
+#                 echo "Uploading $file with resourceType=$RESOURCE_TYPE, id=$RESOURCE_ID"
+                
+#                 RESPONSE=$(curl -s -X PUT "${HAPI_FHIR_BASE_URL}/${RESOURCE_TYPE}/${RESOURCE_ID}" \
+#                   -H "Content-Type: application/fhir+json" --data-binary "@$file")
+
+#                 echo "Response: $RESPONSE"
+#                 STATUS_CODE=$(echo "$RESPONSE" | jq -r '.issue[0].severity // "unknown"')
+
+#                 if [ "$STATUS_CODE" != "unknown" ]; then
+#                   echo "Upload failed for $file: $STATUS_CODE"
+#                   exit 1
+#                 fi
+
+#                 # Verify the update
+#                 RETRIEVED_RESOURCE=$(curl -s -X GET "${HAPI_FHIR_BASE_URL}/${RESOURCE_TYPE}/${RESOURCE_ID}" -H "Accept: application/fhir+json")
+#                 echo "Retrieved Resource after Upload: $RETRIEVED_RESOURCE"
+
+#               else
+#                 echo "Skipping $file: resourceType $RESOURCE_TYPE is not a conformance resource."
+#               fi
+#             fi
+#           done
+
+      
+#           echo "All conformance resources uploaded successfully."
+      
