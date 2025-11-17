@@ -13,3 +13,11 @@ Invariant: ptn-1
 Description: "Birth date must be in the past or today"
 Severity: #error
 Expression: "birthDate <= today()"
+
+
+RuleSet: SharedIdentifierRules
+* identifier 1..
+  * type 1..
+  * system 1..
+  * use 1..
+  * assigner MS
