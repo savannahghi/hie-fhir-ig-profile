@@ -1,7 +1,7 @@
-Instance: ExampleKenyaOrganizationR4B
-InstanceOf: KenyaOrganizationR4B
+Instance: ExampleOrganizationR4B
+InstanceOf: HIEOrganization
 Usage: #example
-Description: "An example Organization resource conforming to the KenyaOrganizationR4B profile."
+Description: "An example Organization resource conforming to the OrganizationR4B profile."
 
 * identifier[0].use = #official
 * identifier[0].type = #MFLCODE "MFL CODE"

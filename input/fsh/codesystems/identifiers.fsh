@@ -1,3 +1,3 @@
-CodeSystem: KenyaIdentifierCodeSystem
+CodeSystem: IdentifierCodeSystem
 * #MFLCODE "Master Facility List Code"
 
