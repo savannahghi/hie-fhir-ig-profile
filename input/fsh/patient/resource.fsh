@@ -1,47 +1,100 @@
-// Profile: KenyaPatient
-// Parent: Patient
-// Id: sghi-patient
-// Title: "SGHI Patient"
-// Description: "Demographics and other administrative information about an individual or animal receiving care or other health-related services."
-// * identifier 1..*
-//   * type only HIECodeableConcept
-//   * type from SGHIPatientIdentifierTypes (required)
-//   * use from $identifier-use (required)
-//   * value 1..1
-//   * system 1..1
-//   * assigner 1..1
-//   * assigner only HIEReference
-//   * assigner only Reference(Organization) // Replace with Profiled Org
+// Profile
+Profile: HIEPatient
+Parent: Patient
+Id: hie-patient
+Title: "HIE Patient"
+Description: "R4B Patient constrained for HIE workflows."
+* ^status = #active
 
-// * text 0..1
-// * active 1..1
+// Minimal narrative
+* text.status = #generated
+* text.div = """
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <p><b>Patient Summary</b></p>
+  <table>
+    <tbody>
+      <tr><td><b>Name</b></td><td>Jane Patient</td></tr>
+      <tr><td><b>Identifier</b></td><td>MRN-12345 (http://example.org/mrn)</td></tr>
+      <tr><td><b>Active</b></td><td>true</td></tr>
+      <tr><td><b>Gender</b></td><td>female</td></tr>
+      <tr><td><b>Date of birth</b></td><td>1990-04-05</td></tr>
+      <tr><td><b>Marital status</b></td><td>Married</td></tr>
+      <tr><td><b>Managing organization</b></td><td>Acme Health Center (Organization/org-001)</td></tr>
+      <tr><td><b>General practitioner</b></td><td>Dr. John Clinician (Practitioner/pr-001)</td></tr>
+    </tbody>
+  </table>
 
-// * name 1..1
-// * name only HIEHumanName
+  <p><b>Telecom</b></p>
+  <ul>
+    <li>Phone, mobile, rank 1: +254700000001</li>
+    <li>Email, home: jane.patient@example.org</li>
+  </ul>
 
-// * telecom 1..*
-// * telecom only HIEContactPoint
+  <p><b>Contacts</b></p>
+  <table>
+    <thead>
+      <tr><th align="left">Name</th><th align="left">Relationship</th><th align="left">Telecom</th><th align="left">Organization</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Mary Patient</td><td>Mother</td><td>+254700000002 (mobile)</td><td>Acme Health Center (Organization/org-001)</td></tr>
+    </tbody>
+  </table>
 
-// * gender 1..1 
-// * birthDate 1..1 
+  <p><b>Communication</b></p>
+  <ul>
+    <li>Language: English, preferred</li>
+  </ul>
 
-// * contact 0..*
-//   * relationship 1..* 
-//   * relationship only HIECodeableConcept
-//   * relationship from HIEContactRelationship (required)
-//   * name 1..1
-//   * name only HIEHumanName
-//   * telecom 1..1
-//   * telecom only HIEContactPoint
-//   * organization only HIEReference
-//   * organization only Reference(Organization) // Replace with Profiled Org
+  <p><b>Links</b></p>
+  <ul>
+    <li>Refer: Patient/p-duplicate-001 (Duplicate index record)</li>
+  </ul>
+</div>
+""" (exactly)
 
-// * managingOrganization 1..1
-// * managingOrganization only HIEReference
-// * managingOrganization only Reference(Organization) // Replace with Profiled Org
+* active 1..1 MS
+* gender 0..1 MS
+* gender from $administrative-gender (required)
+* birthDate 0..1 MS
 
-// * generalPractitioner only HIEReference
-// * generalPractitioner only Reference(Organization) // Replace with Profiled Org
+* insert SharedIdentifierRules
+* identifier 1..* MS
+* identifier.use from $identifier-use (required)
+* identifier.type from $identifier-type (extensible)
 
-// * link.other only HIEReference
-// * link.other only Reference(SGHIPatient) // Replace with Profiled Patient
+* name 1..1 MS
+* name only HIEHumanName
+
+* telecom 0..* MS
+* telecom only HIEContactPoint
+
+* maritalStatus 0..1 MS
+* maritalStatus only HIECodeableConcept
+* maritalStatus from $marital-status (extensible)
+
+* contact 0..* MS
+  * relationship 1..* MS
+  * relationship only HIECodeableConcept
+  * relationship from $patient-contact-relationship (extensible)
+  * name 0..1
+  * telecom 1..*
+  * telecom only HIEContactPoint
+  * organization only Reference(HIEOrganization)
+  * organization ^type.profile = Canonical(HIEReference)
+
+* communication 0..* MS
+  * language 1..1 MS
+  * language only HIECodeableConcept
+  * language from $common-languages (extensible)
+
+* generalPractitioner 0..* MS
+* generalPractitioner only Reference(Practitioner or PractitionerRole or HIEOrganization)
+* generalPractitioner ^type.profile = Canonical(HIEReference)
+
+* managingOrganization 1..1 MS
+* managingOrganization only Reference(HIEOrganization)
+* managingOrganization ^type.profile = Canonical(HIEReference)
+
+* link 0..*
+* link.other only Reference(HIEPatient)
+* link.other ^type.profile = Canonical(HIEReference)

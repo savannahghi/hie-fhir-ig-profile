@@ -17,7 +17,7 @@ Expression: "birthDate <= today()"
 
 RuleSet: SharedIdentifierRules
 * identifier 1..
-  * type 1..
-  * system 1..
-  * use 1..
+  * type 1..1 MS
+  * system 1..1 MS
+  * value 1..1 MS
   * assigner MS
