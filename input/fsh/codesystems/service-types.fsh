@@ -1,2 +1,2 @@
-CodeSystem: KenyaServiceTypesCodeSystem
+CodeSystem: HIEServiceTypesCodeSystem
 * #diab "Post coordinated diabetes program"

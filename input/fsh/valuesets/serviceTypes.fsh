@@ -1,6 +1,6 @@
-ValueSet: KenyaEpisodeOfCareR4BServiceTypesVs
-Id: kenya-episode-of-care-r4b-service-types
-Title: "Kenya Organization Identifier Types"
-Description: "Kenya EpisodeOfCare service types used in Kenya HIE"
+ValueSet: HIEEpisodeOfCareServiceTypesVs
+Id: hie-episode-of-care-service-types
+Title: "Episode of Care Service Types"
+Description: "EpisodeOfCare service types used in HIE"
 * ^status = #active
-* include KenyaServiceTypesCodeSystem#diab
+* include HIEServiceTypesCodeSystem#diab "Diabetes"

@@ -1,5 +1,5 @@
 Instance: ExampleKenyaEpisodeOfCare
-InstanceOf: KenyaEpisodeOfCareR4B
+InstanceOf: HIEEpisodeOfCare
 Title: "Example Kenya EpisodeOfCare"
 Description: "Example EpisodeOfCare instance conforming to KenyaEpisodeOfCareR4B profile"
 
@@ -12,7 +12,7 @@ Description: "Example EpisodeOfCare instance conforming to KenyaEpisodeOfCareR4B
 * statusHistory[0].status = #active
 * statusHistory[0].period.start = "2025-01-10T09:00:00+03:00"
 
-* type[0].coding[0].system = "http://example.org/fhir/ValueSet/KenyaEpisodeOfCareR4BServiceTypesVs"
+* type[0].coding[0].system = "http://example.org/fhir/ValueSet/HIEEpisodeOfCareServiceTypesVs"
 * type[0].coding[0].code = #outpatient
 * type[0].coding[0].display = "Outpatient"
 
