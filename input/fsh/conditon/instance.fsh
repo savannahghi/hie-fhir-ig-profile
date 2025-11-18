@@ -104,6 +104,9 @@ Description: "Encounter diagnosis of headache, moderate severity"
 * identifier[0].system = "http://example.org/conditions"
 * identifier[0].value = "COND-12345"
 * identifier[0].type.text = "Condition ID"
+* identifier[0].type.coding[0].system = "http://terminology.hl7.org/CodeSystem/v2-0203"
+* identifier[0].type.coding[0].code = #MR
+* identifier[0].type.coding[0].display = "Medical record number"
 
 * clinicalStatus.coding[0].system = "http://hl7.org/fhir/condition-clinical"
 * clinicalStatus.coding[0].code = #active
