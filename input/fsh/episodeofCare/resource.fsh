@@ -1,8 +1,8 @@
 Profile: HIEEpisodeOfCare
 Parent: EpisodeOfCare
-Id: episode-of-care
-Title: "EpisodeOfCare"
-Description: "EpisodeOfCare is a HIE representation of EpisodeOfCare FHIR resource to be used with KHIE"
+Id: hie-episode-of-care
+Title: "HIE EpisodeOfCare"
+Description: "EpisodeOfCare is the representation of EpisodeOfCare FHIR resource to be used with national HIE"
 * ^version = "0.1.0-r4b"
 * ^status = #active
 * insert SharedIdentifierRules
@@ -13,4 +13,4 @@ Description: "EpisodeOfCare is a HIE representation of EpisodeOfCare FHIR resour
 * account MS
 * diagnosis MS
 * type 1..
-* type from EpisodeOfCareServiceTypesVs
+* type from HIEEpisodeOfCareServiceTypesVs
