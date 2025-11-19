@@ -1,7 +1,7 @@
-Profile: KenyaObservationR4B
+Profile: HIEObservation
 Parent: Observation
-Id: kenya-observation
-Title: "Kenya R4B Observation"
+Id: hie-observation
+Title: "HIE Observation"
 Description: "Observation is a Kenya HIE representation of Observation FHIR resource to be used within KHIE"
 * ^version = "0.1.0-r4b"
 * ^status = #active

@@ -1,7 +1,7 @@
 Instance: ExampleKenyaEpisodeOfCare
 InstanceOf: HIEEpisodeOfCare
 Title: "Example Kenya EpisodeOfCare"
-Description: "Example EpisodeOfCare instance conforming to KenyaEpisodeOfCareR4B profile"
+Description: "Example EpisodeOfCare instance conforming to EpisodeOfCare profile"
 
 * identifier[0].system = "http://khie.health.go.ke/identifiers/episodeofcare"
 * identifier[0].value = "EOC-987654321"
