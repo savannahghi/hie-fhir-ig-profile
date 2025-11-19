@@ -1,5 +1,5 @@
 ValueSet: OrganizationIdentifiersVs
-Id: kenya-organization-r4b-identifier-types
+Id: hie-organization-identifier-types
 Title: "Organization Identifier Types"
 Description: "Identifier types used  to identify healthcare organizations in HIE"
 * ^status = #active

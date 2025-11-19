@@ -1,7 +1,7 @@
 Instance: ExampleKenyaObservation
-InstanceOf: KenyaObservationR4B
+InstanceOf: HIEObservation
 Title: "Example Kenya Observation"
-Description: "Example instance conforming to the KenyaObservationR4B profile"
+Description: "Example instance conforming to the HIEObservation profile"
 
 * identifier[0].system = "http://khie.health.go.ke/identifiers/observations"
 * identifier[0].value = "OBS-123456789"
