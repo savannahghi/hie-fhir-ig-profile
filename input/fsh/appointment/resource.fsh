@@ -13,7 +13,7 @@ Description: "R4B Appointment constrained for HIE scheduling, requiring clear st
   <ul>
     <li>Must Support: status, start, end or minutesDuration, participant, reasonCode</li>
     <li>Bindings: status (required), participant.status (required), appointmentType (extensible), priority (code), serviceType (local TS)</li>
-    <li>References: participant.actor → Patient, Practitioner, PractitionerRole, RelatedPerson, Device, Location, HealthcareService, Organization</li>
+    <li>References: participant.actor → Patient, HIEPractitioner, PractitionerRole, RelatedPerson, Device, Location, HealthcareService, Organization</li>
   </ul>
 </div>
 """
@@ -70,7 +70,7 @@ Description: "R4B Appointment constrained for HIE scheduling, requiring clear st
 
 * participant.actor 0..1 MS
 * participant.actor only Reference(
-    HIEPatient or Practitioner or PractitionerRole or RelatedPerson or
+    HIEPatient or HIEPractitioner or PractitionerRole or RelatedPerson or
     Device or Location or HealthcareService
   )
 * participant.actor ^type.profile = Canonical(HIEReference)

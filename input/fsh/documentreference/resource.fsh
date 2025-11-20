@@ -33,11 +33,11 @@ Description: "R4B DocumentReference constrained for HIE exchange. Requires stron
 * date 1..1 MS
 
 * author 1..* MS
-* author only Reference(Practitioner or PractitionerRole or HIEOrganization or HIEPatient)
+* author only Reference(HIEPractitioner or PractitionerRole or HIEOrganization or HIEPatient)
 * author ^type.profile = Canonical(HIEReference)
 
 * authenticator 1..1
-* authenticator only Reference(Practitioner or PractitionerRole or HIEOrganization)
+* authenticator only Reference(HIEPractitioner or PractitionerRole or HIEOrganization)
 * authenticator ^type.profile = Canonical(HIEReference)
 
 * custodian 0..1

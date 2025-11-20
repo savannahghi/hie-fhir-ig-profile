@@ -58,11 +58,11 @@ Description: "R4B Condition constrained for HIE capture and exchange."
 * recordedDate 1..1 MS
 
 * recorder 0..1
-* recorder only Reference(Practitioner or PractitionerRole or HIEPatient)
+* recorder only Reference(HIEPractitioner or PractitionerRole or HIEPatient)
 * recorder ^type.profile = Canonical(HIEReference)
 
 * asserter 1..1
-* asserter only Reference(Patient or Practitioner or PractitionerRole or RelatedPerson)
+* asserter only Reference(Patient or HIEPractitioner or PractitionerRole or RelatedPerson)
 * asserter ^type.profile = Canonical(HIEReference)
 
 * stage 0..*

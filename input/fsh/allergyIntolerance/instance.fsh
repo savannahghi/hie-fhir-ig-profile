@@ -100,7 +100,7 @@ Description: "Peanut allergy with urticaria reaction"
 
   <p><b>Provenance</b></p>
   <ul>
-    <li>Recorder: Dr. John Clinician, Practitioner/pr-001</li>
+    <li>Recorder: Dr. John Clinician, HIEPractitioner/pr-001</li>
     <li>Asserter: Jane Patient, Patient/p-001</li>
   </ul>
 
@@ -142,12 +142,12 @@ Description: "Peanut allergy with urticaria reaction"
 * encounter.display = "Ambulatory visit for rash"
 
 * recordedDate = "2025-11-10"
-* recorder.reference = "Practitioner/pr-001"
+* recorder.reference = "HIEPractitioner/pr-001"
 * recorder.display = "Dr. John Clinician"
 * asserter.reference = "Patient/p-001"
 * asserter.display = "Jane Patient"
 
-* note[0].authorReference = Reference(Practitioner/pr-001)
+* note[0].authorReference = Reference(HIEPractitioner/pr-001)
 * note[0].time = "2025-11-10T09:30:00+03:00"
 * note[0].text = "Patient reports hives within 30 minutes of ingesting peanuts; carries epinephrine auto-injector."
 
@@ -167,6 +167,6 @@ Description: "Peanut allergy with urticaria reaction"
 * reaction[0].exposureRoute.coding[0].code = #26643006
 * reaction[0].exposureRoute.coding[0].display = "Oral route"
 
-* reaction[0].note[0].authorReference = Reference(Practitioner/pr-001)
+* reaction[0].note[0].authorReference = Reference(HIEPractitioner/pr-001)
 * reaction[0].note[0].time = "2025-11-10T09:35:00+03:00"
 * reaction[0].note[0].text = "Resolved with oral antihistamine. No respiratory compromise."

@@ -46,11 +46,11 @@ Description: "R4B DiagnosticReport constrained for HIE capture and exchange."
 * issued 0..1 MS
 
 * performer 1..* MS
-* performer only Reference(HIEOrganization or Practitioner or PractitionerRole)
+* performer only Reference(HIEOrganization or HIEPractitioner or PractitionerRole)
 * performer ^type.profile = Canonical(HIEReference)
 
 * resultsInterpreter 0..*
-* resultsInterpreter only Reference(Practitioner or PractitionerRole or HIEOrganization)
+* resultsInterpreter only Reference(HIEPractitioner or PractitionerRole or HIEOrganization)
 * resultsInterpreter ^type.profile = Canonical(HIEReference)
 
 * specimen 0..*

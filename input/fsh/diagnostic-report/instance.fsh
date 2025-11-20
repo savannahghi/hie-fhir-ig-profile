@@ -76,7 +76,7 @@ Description: "CBC panel with key hematology results"
 * performer[0].reference = "Organization/org-001"
 * performer[0].display = "Acme Lab"
 
-* resultsInterpreter[0].reference = "Practitioner/pr-001"
+* resultsInterpreter[0].reference = "HIEPractitioner/pr-001"
 * resultsInterpreter[0].display = "Dr. John Clinician"
 
 * specimen[0].reference = "Specimen/spec-001"

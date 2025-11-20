@@ -2,7 +2,7 @@ Instance: HIEAppointmentResponse-example
 InstanceOf: HIEAppointmentResponse
 Usage: #example
 Title: "Example HIE AppointmentResponse"
-Description: "Practitioner accepts a booked appointment window"
+Description: "HIEPractitioner accepts a booked appointment window"
 
 * text.status = #generated
 * text.div = """
@@ -15,7 +15,7 @@ Description: "Practitioner accepts a booked appointment window"
     </thead>
     <tbody>
       <tr><td>Appointment</td><td>HIEAppointment APT-2025-0001</td></tr>
-      <tr><td>Actor</td><td>Dr. John Clinician (Practitioner/pr-001)</td></tr>
+      <tr><td>Actor</td><td>Dr. John Clinician (HIEPractitioner/pr-001)</td></tr>
       <tr><td>Status</td><td>accepted</td></tr>
       <tr><td>Start</td><td>2025-11-20T09:00:00+03:00</td></tr>
       <tr><td>End</td><td>2025-11-20T09:30:00+03:00</td></tr>
@@ -36,7 +36,7 @@ Description: "Practitioner accepts a booked appointment window"
 * appointment.reference = "Appointment/HIEAppointment-example"
 * appointment.display = "Booked GP consult"
 
-* actor.reference = "Practitioner/pr-001"
+* actor.reference = "HIEPractitioner/pr-001"
 * actor.display = "Dr. John Clinician"
 
 * participantStatus = #accepted

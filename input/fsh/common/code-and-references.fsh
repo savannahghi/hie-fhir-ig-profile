@@ -54,7 +54,7 @@ Description: "A text note with author and time."
 * time 1..1 MS
 * text 1..1 MS
 * author[x] 1..1 MS
-* author[x] only Reference(Practitioner or Patient or RelatedPerson)
+* author[x] only Reference(HIEPractitioner or Patient or RelatedPerson)
 
 // HIE CodeableReference
 Profile: HIECodeableReference
