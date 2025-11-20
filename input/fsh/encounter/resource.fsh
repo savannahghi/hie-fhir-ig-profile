@@ -70,7 +70,7 @@ Description: "An interaction between a patient and healthcare providers to deliv
 * participant.type 0..* MS
 * participant.type only HIECodeableConcept
 * participant.individual 0..1 MS
-* participant.individual only Reference(Practitioner or PractitionerRole or RelatedPerson)
+* participant.individual only Reference(HIEPractitioner or PractitionerRole or RelatedPerson)
 * participant.individual ^type.profile = Canonical(HIEReference)
 
 * diagnosis 0..* MS

@@ -38,7 +38,7 @@ Description: "R4B Consent profiled for HIE workflows, emphasizing clear scope, c
 * dateTime 0..1 MS
 
 * performer 1..* MS
-* performer only Reference(HIEPatient or Practitioner or PractitionerRole or RelatedPerson or HIEOrganization)
+* performer only Reference(HIEPatient or HIEPractitioner or PractitionerRole or RelatedPerson or HIEOrganization)
 * performer ^type.profile = Canonical(HIEReference)
 
 * organization 1..* MS
@@ -57,7 +57,7 @@ Description: "R4B Consent profiled for HIE workflows, emphasizing clear scope, c
 * provision.actor.role 1..1
 * provision.actor.role only HIECodeableConcept
 * provision.actor.reference 1..1
-* provision.actor.reference only Reference(HIEPatient or Practitioner or PractitionerRole or RelatedPerson or Organization or CareTeam or Device)
+* provision.actor.reference only Reference(HIEPatient or HIEPractitioner or PractitionerRole or RelatedPerson or Organization or CareTeam or Device)
 * provision.actor.reference ^type.profile = Canonical(HIEReference)
 
 * provision.action 0..*

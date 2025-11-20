@@ -32,3 +32,5 @@ Alias: $docref-status        = http://hl7.org/fhir/ValueSet/document-reference-s
 Alias: $dr-docstatus     = http://hl7.org/fhir/ValueSet/composition-status
 Alias: $doc-typecodes    = http://hl7.org/fhir/ValueSet/doc-typecodes
 Alias: $security-labels  = http://hl7.org/fhir/ValueSet/security-labels
+Alias: $q-operator     = http://hl7.org/fhir/ValueSet/questionnaire-enable-operator
+Alias: $q-item-control = http://hl7.org/fhir/ValueSet/questionnaire-item-control

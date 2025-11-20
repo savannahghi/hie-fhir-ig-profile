@@ -49,7 +49,7 @@ Description: "R4B patient record for HIE workflows"
 * communication[0].language.coding[0].display = "English"
 * communication[0].preferred = true
 
-* generalPractitioner[0].reference = "Practitioner/pr-001"
+* generalPractitioner[0].reference = "HIEPractitioner/pr-001"
 * generalPractitioner[0].display = "Dr. John Clinician"
 
 * managingOrganization.reference = "Organization/org-001"

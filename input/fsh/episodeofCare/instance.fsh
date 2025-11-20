@@ -24,7 +24,7 @@ Description: "Example EpisodeOfCare instance conforming to EpisodeOfCare profile
 
 * referralRequest[0].reference = "ServiceRequest/servreq-1001"
 
-* careManager.reference = "Practitioner/prac-001"
+* careManager.reference = "HIEPractitioner/prac-001"
 
 * account[0].reference = "Account/acc-001"
 

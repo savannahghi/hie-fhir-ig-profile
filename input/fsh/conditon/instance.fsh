@@ -89,7 +89,7 @@ Description: "Encounter diagnosis of headache, moderate severity"
 
   <p><b>Provenance</b></p>
   <ul>
-    <li>Recorder: Dr. John Clinician, Practitioner/pr-001</li>
+    <li>Recorder: Dr. John Clinician, HIEPractitioner/pr-001</li>
     <li>Asserter: Jane Patient, Patient/p-001</li>
   </ul>
 
@@ -140,7 +140,7 @@ Description: "Encounter diagnosis of headache, moderate severity"
 
 * recordedDate = "2025-11-12"
 
-* recorder.reference = "Practitioner/pr-001"
+* recorder.reference = "HIEPractitioner/pr-001"
 * recorder.display = "Dr. John Clinician"
 
 * asserter.reference = "Patient/p-001"
@@ -163,6 +163,6 @@ Description: "Encounter diagnosis of headache, moderate severity"
 * evidence[0].detail[0].reference = "Observation/obs-001"
 * evidence[0].detail[0].display = "Pain score NRS 6/10"
 
-* note[0].authorReference = Reference(Practitioner/pr-001)
+* note[0].authorReference = Reference(HIEPractitioner/pr-001)
 * note[0].time = "2025-11-12T10:15:00+03:00"
 * note[0].text = "Headache started yesterday morning, no red flags, managed with NSAIDs."

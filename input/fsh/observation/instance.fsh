@@ -27,7 +27,7 @@ Description: "Example instance conforming to the HIEObservation profile"
 * valueQuantity.system = "http://unitsofmeasure.org"
 * valueQuantity.code = #mm[Hg]
 
-* performer[0].reference = "Practitioner/prac-001"
+* performer[0].reference = "HIEPractitioner/prac-001"
 
 * interpretation[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
 * interpretation[0].coding[0].code = #H

@@ -41,7 +41,7 @@ Description: "R4B AllergyIntolerance constrained for HIE capture and exchange."
   <ul>
     <li>patient → HIEPatient</li>
     <li>encounter → HIEEncounter</li>
-    <li>recorder, asserter → Practitioner, PractitionerRole, Organization, Patient, RelatedPerson</li>
+    <li>recorder, asserter → HIEPractitioner, PractitionerRole, Organization, Patient, RelatedPerson</li>
   </ul>
 </div>
 """
@@ -79,11 +79,11 @@ Description: "R4B AllergyIntolerance constrained for HIE capture and exchange."
 * recordedDate 1..1 MS
 
 * recorder 0..1
-* recorder only Reference(Practitioner or PractitionerRole)
+* recorder only Reference(HIEPractitioner or PractitionerRole)
 * recorder ^type.profile = Canonical(HIEReference)
 
 * asserter 1..1
-* asserter only Reference(HIEPatient or Practitioner or PractitionerRole or RelatedPerson)
+* asserter only Reference(HIEPatient or HIEPractitioner or PractitionerRole or RelatedPerson)
 * asserter ^type.profile = Canonical(HIEReference)
 
 * reaction 1..* MS

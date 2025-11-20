@@ -43,7 +43,7 @@ Description: "Ambulatory encounter for headache"
 * participant[0].type[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/participant-type"
 * participant[0].type[0].coding[0].code = #PPRF
 * participant[0].type[0].coding[0].display = "primary performer"
-* participant[0].individual.reference = "Practitioner/pr-001"
+* participant[0].individual.reference = "HIEPractitioner/pr-001"
 * participant[0].individual.display = "Dr. John Clinician"
 
 * reasonCode[0].coding[0].system = "http://snomed.info/sct"

@@ -20,7 +20,7 @@ Description: "R4B Patient constrained for HIE workflows."
       <tr><td><b>Date of birth</b></td><td>1990-04-05</td></tr>
       <tr><td><b>Marital status</b></td><td>Married</td></tr>
       <tr><td><b>Managing organization</b></td><td>Acme Health Center (Organization/org-001)</td></tr>
-      <tr><td><b>General practitioner</b></td><td>Dr. John Clinician (Practitioner/pr-001)</td></tr>
+      <tr><td><b>General practitioner</b></td><td>Dr. John Clinician (HIEPractitioner/pr-001)</td></tr>
     </tbody>
   </table>
 
@@ -88,7 +88,7 @@ Description: "R4B Patient constrained for HIE workflows."
   * language from $common-languages (extensible)
 
 * generalPractitioner 0..* MS
-* generalPractitioner only Reference(Practitioner or PractitionerRole or HIEOrganization)
+* generalPractitioner only Reference(HIEPractitioner or PractitionerRole or HIEOrganization)
 * generalPractitioner ^type.profile = Canonical(HIEReference)
 
 * managingOrganization 1..1 MS

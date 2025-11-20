@@ -22,7 +22,7 @@ Description: "Booked outpatient consultation, 30 minutes, with participant roles
       <tr><td>Service Type</td><td>General practice consult</td></tr>
       <tr><td>Reason</td><td>Headache (SNOMED 25064002)</td></tr>
       <tr><td>Subject</td><td>Jane Patient (Patient/p-001)</td></tr>
-      <tr><td>Performer</td><td>Dr. John Clinician (Practitioner/pr-001)</td></tr>
+      <tr><td>Performer</td><td>Dr. John Clinician (HIEPractitioner/pr-001)</td></tr>
       <tr><td>Location</td><td>Outpatient Room 3 (Location/loc-OPD)</td></tr>
     </tbody>
   </table>
@@ -86,7 +86,7 @@ Description: "Booked outpatient consultation, 30 minutes, with participant roles
 * participant[1].type[0].coding[0].system = "http://terminology.hl7.org/CodeSystem/participant-type"
 * participant[1].type[0].coding[0].code = #PPRF
 * participant[1].type[0].coding[0].display = "primary performer"
-* participant[1].actor.reference = "Practitioner/pr-001"
+* participant[1].actor.reference = "HIEPractitioner/pr-001"
 * participant[1].actor.display = "Dr. John Clinician"
 * participant[1].status = #accepted
 

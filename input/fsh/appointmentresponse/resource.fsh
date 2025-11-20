@@ -13,7 +13,7 @@ Description: "R4B AppointmentResponse constrained for HIE scheduling responses, 
   <ul>
     <li>Must Support: appointment, actor, participantStatus</li>
     <li>Timing: start/end, or occurrenceDateTime, or requestedPeriod</li>
-    <li>References: appointment → HIEAppointment, actor → Patient, Practitioner, RelatedPerson, Device, HealthcareService, Location</li>
+    <li>References: appointment → HIEAppointment, actor → Patient, HIEPractitioner, RelatedPerson, Device, HealthcareService, Location</li>
   </ul>
 </div>
 """
@@ -28,7 +28,7 @@ Description: "R4B AppointmentResponse constrained for HIE scheduling responses, 
 * appointment ^type.profile = Canonical(HIEReference)
 
 * actor 1..1 MS
-* actor only Reference(HIEPatient or Practitioner or RelatedPerson or Device or HealthcareService or Location)
+* actor only Reference(HIEPatient or HIEPractitioner or RelatedPerson or Device or HealthcareService or Location)
 * actor ^type.profile = Canonical(HIEReference)
 
 * participantStatus 1..1 MS

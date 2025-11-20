@@ -23,7 +23,7 @@ Description: "Discharge summary PDF for outpatient encounter"
       <tr><td>Subject</td><td>Jane Patient (Patient/p-001)</td></tr>
       <tr><td>Date</td><td>2025-11-12T11:20:00+03:00</td></tr>
       <tr><td>Author</td><td>Acme Health (Organization/org-001)</td></tr>
-      <tr><td>Authenticator</td><td>Dr. John Clinician (Practitioner/pr-001)</td></tr>
+      <tr><td>Authenticator</td><td>Dr. John Clinician (HIEPractitioner/pr-001)</td></tr>
       <tr><td>Encounter</td><td>Outpatient visit (Encounter/enc-001)</td></tr>
       <tr><td>Attachment</td><td>application/pdf, 256 KB, title "Discharge Summary", URL Binary/bin-001</td></tr>
     </tbody>
@@ -55,7 +55,7 @@ Description: "Discharge summary PDF for outpatient encounter"
 
 * author[0].reference = "Organization/org-001"
 * author[0].display = "Acme Health"
-* authenticator.reference = "Practitioner/pr-001"
+* authenticator.reference = "HIEPractitioner/pr-001"
 * authenticator.display = "Dr. John Clinician"
 * custodian.reference = "Organization/org-001"
 * custodian.display = "Acme Health"
