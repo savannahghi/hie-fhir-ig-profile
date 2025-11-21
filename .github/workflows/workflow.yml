@@ -1,91 +1,91 @@
-# name: Upload SGHI FHIR Implentation Guide(IG) Resources To HAPI FHIR server
+name: Upload SGHI FHIR Implentation Guide(IG) Resources To HAPI FHIR server
 
-# on: [push]
+on: [push]
 
-# env:
-#   HAPI_FHIR_BASE_URL: ${{ secrets.HAPI_FHIR_BASE_URL }}
+env:
+  HAPI_FHIR_BASE_URL: ${{ secrets.HAPI_FHIR_BASE_URL }}
 
-# jobs:
-#   build-and-publish:
-#     if: ${{ github.ref == 'refs/heads/main' }}
-#     runs-on: ubuntu-latest
+jobs:
+  build-and-publish:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
     
-#     strategy:
-#       matrix:
-#         environment: [testing, staging, prod]
+    strategy:
+      matrix:
+        environment: [testing]
 
-#     environment:
-#       name: ${{ matrix.environment }}
+    environment:
+      name: ${{ matrix.environment }}
     
-#     steps:
-#       - name: Check Repository
-#         uses: actions/checkout@v4
+    steps:
+      - name: Check Repository
+        uses: actions/checkout@v4
 
-#       - name: Set up Node.js
-#         uses: actions/setup-node@v4
-#         with:
-#           node-version: '18'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
         
-#       - name: Install Dependencies
-#         run: |
-#           sudo apt-get update
-#           sudo apt-get install -y nodejs npm jq
-#           npm install -g fsh-sushi
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nodejs npm jq
+          npm install -g fsh-sushi
 
-#       - name: Update sushi-config.yaml
-#         run: |
-#           echo "Replacing default canonical 'https://fhir.slade360.co.ke/fhir' with '${{ env.HAPI_FHIR_BASE_URL }}' in sushi-config.yaml"
-#           sed -i "s|https://fhir.slade360.co.ke/fhir|${{ env.HAPI_FHIR_BASE_URL }}|g" sushi-config.yaml
-#           echo "Updated sushi-config.yaml:"
-#           cat sushi-config.yaml
+      - name: Update sushi-config.yaml
+        run: |
+          echo "Replacing default canonical 'https://fhir.slade360.co.ke/fhir' with '${{ env.HAPI_FHIR_BASE_URL }}' in sushi-config.yaml"
+          sed -i "s|https://fhir.slade360.co.ke/fhir|${{ env.HAPI_FHIR_BASE_URL }}|g" sushi-config.yaml
+          echo "Updated sushi-config.yaml:"
+          cat sushi-config.yaml
 
-#       - name: Run SUSHI Build
-#         run: |
-#           sushi -s .
+      - name: Run SUSHI Build
+        run: |
+          sushi -s .
 
-#       - name: Generate FHIR IG and Snapshots
-#         run: |
-#           echo "Generating FHIR Implementation Guide and snapshots..."
-#           ./_updatePublisher.sh
-#           ./_genonce.sh
-#           echo "IG generation and snapshot creation complete."
+      - name: Generate FHIR IG and Snapshots
+        run: |
+          echo "Generating FHIR Implementation Guide and snapshots..."
+          ./_updatePublisher.sh
+          ./_genonce.sh
+          echo "IG generation and snapshot creation complete."
           
-#       - name: Publish FHIR Artifacts to HAPI FHIR
-#         env:
-#             HAPI_USERNAME: ${{ secrets.HAPI_USERNAME }}
-#             HAPI_PASSWORD: ${{ secrets.HAPI_PASSWORD }}
-#         run: |
-#             set -euo pipefail
-#             echo "Publishing to server: ${HAPI_FHIR_BASE_URL}"
+      - name: Publish FHIR Artifacts to HAPI FHIR
+        env:
+            HAPI_USERNAME: ${{ secrets.HAPI_USERNAME }}
+            HAPI_PASSWORD: ${{ secrets.HAPI_PASSWORD }}
+        run: |
+            set -euo pipefail
+            echo "Publishing to server: ${HAPI_FHIR_BASE_URL}"
 
-#             AUTH_OPT=""
-#             if [[ -n "${HAPI_USERNAME:-}" && -n "${HAPI_PASSWORD:-}" ]]; then
-#             AUTH_OPT="--user ${HAPI_USERNAME}:${HAPI_PASSWORD}"
-#             echo "Using HTTP basic auth with provided credentials"
-#             fi
+            AUTH_OPT=""
+            if [[ -n "${HAPI_USERNAME:-}" && -n "${HAPI_PASSWORD:-}" ]]; then
+            AUTH_OPT="--user ${HAPI_USERNAME}:${HAPI_PASSWORD}"
+            echo "Using HTTP basic auth with provided credentials"
+            fi
 
-#             shopt -s nullglob
-#             for file in fsh-generated/resources/*.json; do
-#             RESOURCE_TYPE=$(jq -r '.resourceType' "$file")
-#             RESOURCE_ID=$(jq -r '.id' "$file")
+            shopt -s nullglob
+            for file in fsh-generated/resources/*.json; do
+            RESOURCE_TYPE=$(jq -r '.resourceType' "$file")
+            RESOURCE_ID=$(jq -r '.id' "$file")
 
-#             case "$RESOURCE_TYPE" in
-#                 StructureDefinition|ValueSet|CodeSystem)
-#                 echo "Uploading ${file} (Type: ${RESOURCE_TYPE}, ID: ${RESOURCE_ID})"
-#                 STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
-#                     ${AUTH_OPT} \
-#                     -X PUT "${HAPI_FHIR_BASE_URL}/${RESOURCE_TYPE}/${RESOURCE_ID}" \
-#                     -H "Content-Type: application/fhir+json" \
-#                     --data-binary @"$file")
-#                 if [[ "$STATUS_CODE" -lt 200 || "$STATUS_CODE" -ge 300 ]]; then
-#                     echo "Error uploading ${file} to ${HAPI_FHIR_BASE_URL} (HTTP ${STATUS_CODE})"
-#                     exit 1
-#                 fi
-#                 ;;
-#                 *)
-#                 echo "Skipping ${file}: ${RESOURCE_TYPE} is not a conformance resource."
-#                 ;;
-#             esac
-#             done
+            case "$RESOURCE_TYPE" in
+                StructureDefinition|ValueSet|CodeSystem)
+                echo "Uploading ${file} (Type: ${RESOURCE_TYPE}, ID: ${RESOURCE_ID})"
+                STATUS_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+                    ${AUTH_OPT} \
+                    -X PUT "${HAPI_FHIR_BASE_URL}/${RESOURCE_TYPE}/${RESOURCE_ID}" \
+                    -H "Content-Type: application/fhir+json" \
+                    --data-binary @"$file")
+                if [[ "$STATUS_CODE" -lt 200 || "$STATUS_CODE" -ge 300 ]]; then
+                    echo "Error uploading ${file} to ${HAPI_FHIR_BASE_URL} (HTTP ${STATUS_CODE})"
+                    exit 1
+                fi
+                ;;
+                *)
+                echo "Skipping ${file}: ${RESOURCE_TYPE} is not a conformance resource."
+                ;;
+            esac
+            done
 
-#             echo "All conformance resources uploaded successfully."
+            echo "All conformance resources uploaded successfully."
