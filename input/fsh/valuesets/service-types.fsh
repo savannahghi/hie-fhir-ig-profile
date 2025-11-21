@@ -1,6 +1,6 @@
-ValueSet: EpisodeOfCareServiceTypesVs
-Id: episode-of-care-r4b-service-types
-Title: "Organization Identifier Types"
+ValueSet: HIEEpisodeOfCareServiceTypesVs
+Id: hie-episode-of-care-service-types
+Title: "Episode of Care Service Types"
 Description: "EpisodeOfCare service types used in HIE"
 * ^status = #active
-* include HIEServiceTypesCodeSystem#diab
+* include HIEServiceTypesCodeSystem#diab "Diabetes"
