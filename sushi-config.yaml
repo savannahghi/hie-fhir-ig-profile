@@ -8,11 +8,11 @@ canonical: https://nshr.dha.go.ke/fhir
 name: HieFhirProfileIG
 title: SIL HIE Implementation Guide
 description: An implementation guide that defines the rules that fhir resource profiling
-status: draft # draft | active | retired | unknown
+status: active # draft | active | retired | unknown
 version: 0.1.0
 fhirVersion: 4.3.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2025+
-releaseLabel: sil-hie-draft
+releaseLabel: sil-hie-active
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 # jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:

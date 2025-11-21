@@ -24,7 +24,7 @@ build:
 .PHONY: ig
 ig:
 	@echo "Generating FHIR Implementation Guide(s)..."
-	./_updatePublisher.sh 
+	./_updatePublisher.sh
 	./_genonce.sh
 	@echo "FHIR IG generation complete."
 
@@ -34,7 +34,12 @@ publish-local:
 	sed -i.bak "s|https://nshr.dha.go.ke/fhir|$(LOCAL_CANONICAL)|g" sushi-config.yaml
 	$(SUSHI_CMD) .
 	@echo "Publishing to Local HAPI FHIR at $(LOCAL_CANONICAL)"
-	@for file in fsh-generated/resources/*.json; do \
+	@AUTH_OPT=""; \
+	if [ -n "$$HAPI_USERNAME" ] && [ -n "$$HAPI_PASSWORD" ]; then \
+	  AUTH_OPT="-u $$HAPI_USERNAME:$$HAPI_PASSWORD"; \
+	  echo "Using HTTP basic auth with provided credentials"; \
+	fi; \
+	for file in fsh-generated/resources/*.json; do \
 	  if [ -f "$$file" ]; then \
 	    RESOURCE_TYPE=$$(jq -r '.resourceType' "$$file"); \
 	    RESOURCE_ID=$$(jq -r '.id' "$$file"); \
@@ -43,6 +48,7 @@ publish-local:
 	       [ "$$RESOURCE_TYPE" = "CodeSystem" ]; then \
 	      echo "Uploading $$file (Type: $$RESOURCE_TYPE, ID: $$RESOURCE_ID)"; \
 	      STATUS_CODE=$$(curl -s -o /dev/null -w "%{http_code}" \
+	        $$AUTH_OPT \
 	        -X PUT "$(LOCAL_CANONICAL)/$$RESOURCE_TYPE/$$RESOURCE_ID" \
 	        -H "Content-Type: application/fhir+json" \
 	        --data-binary "@$$file"); \
