@@ -5,6 +5,45 @@ Title: "Example HIE Patient"
 Description: "R4B patient record for HIE workflows"
 
 * text.status = #generated
+* text.div = """
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <p><b>Patient Summary</b></p>
+  <table>
+    <tbody>
+      <tr><td><b>Name</b></td><td>Jane Patient</td></tr>
+      <tr><td><b>Identifier</b></td><td>MRN-12345 (http://example.org/mrn)</td></tr>
+      <tr><td><b>Active</b></td><td>true</td></tr>
+      <tr><td><b>Gender</b></td><td>female</td></tr>
+      <tr><td><b>Date of birth</b></td><td>1990-04-05</td></tr>
+      <tr><td><b>Marital status</b></td><td>Married</td></tr>
+      <tr><td><b>Managing organization</b></td><td>Acme Health Center (Organization/org-001)</td></tr>
+      <tr><td><b>General practitioner</b></td><td>Dr. John Clinician (HIEPractitioner/pr-001)</td></tr>
+    </tbody>
+  </table>
+  <p><b>Telecom</b></p>
+  <ul>
+    <li>Phone, mobile, rank 1: +254700000001</li>
+    <li>Email, home: jane.patient@example.org</li>
+  </ul>
+  <p><b>Contacts</b></p>
+  <table>
+    <thead>
+      <tr><th align="left">Name</th><th align="left">Relationship</th><th align="left">Telecom</th><th align="left">Organization</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Mary Patient</td><td>Mother</td><td>+254700000002 (mobile)</td><td>Acme Health Center (Organization/org-001)</td></tr>
+    </tbody>
+  </table>
+  <p><b>Communication</b></p>
+  <ul>
+    <li>Language: English, preferred</li>
+  </ul>
+  <p><b>Links</b></p>
+  <ul>
+    <li>Refer: Patient/p-duplicate-001 (Duplicate index record)</li>
+  </ul>
+</div>
+"""
 
 * active = true
 * gender = #female

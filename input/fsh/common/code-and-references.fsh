@@ -5,11 +5,6 @@ Description: "Text is optional, coding is required"
 Severity: #warning
 Expression: "coding.exists()"
 
-Invariant: hie-valid-reference
-Description: "Reference must be a valid FHIR REST reference"
-Severity: #error
-Expression: "reference.matches('(^[A-Za-z]+\\/[A-Za-z0-9\\-\\.]{1,64}(\\/_history\\/[A-Za-z0-9\\-\\.]{1,64})?$)|(^https?:\\/\\/.*)')"
-
 Invariant: hie-cr-at-least-one
 Description: "Provide concept or reference, at least one"
 Severity: #error
@@ -22,14 +17,11 @@ Id: hie-codeable-concept
 Title: "HIE CodeableConcept"
 Description: "A CodeableConcept for HIE use. Codes are required, text is optional."
 * ^status = #active
-* coding 1..* MS
-* coding.system 1..1 MS
-* coding.code 1..1 MS
-* coding.display 1..1 MS
-* coding.system ^short = "Canonical code system URI"
-* coding.code ^short = "Symbol in system"
-* coding.display ^short = "Human display"
-* text 0..1 MS
+* coding 1..*
+  * system 1..1
+  * code 1..1
+  * display 1..1
+* text 0..1
 * obeys hie-cc-text-or-code
 
 // HIE Reference (datatype profile)
@@ -42,7 +34,6 @@ Description: "A Reference that is resolvable, with display for UX."
 * reference 1..1 MS
 * type 0..1
 * display 1..1 MS
-* reference obeys hie-valid-reference
 
 // HIE Annotation
 Profile: HIEAnnotation

@@ -1,6 +1,6 @@
 Profile: HIEDocumentReference
 Parent: DocumentReference
-Id: hie-document-reference
+Id: hie-documentreference
 Title: "HIE DocumentReference"
 Description: "R4B DocumentReference constrained for HIE exchange. Requires strong typing, subject linkage, and well-formed attachments."
 * ^status = #active
