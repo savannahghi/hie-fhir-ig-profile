@@ -34,8 +34,8 @@ jobs:
 
       - name: Update sushi-config.yaml
         run: |
-          echo "Replacing default canonical 'https://fhir.slade360.co.ke/fhir' with '${{ env.HAPI_FHIR_BASE_URL }}' in sushi-config.yaml"
-          sed -i "s|https://fhir.slade360.co.ke/fhir|${{ env.HAPI_FHIR_BASE_URL }}|g" sushi-config.yaml
+          echo "Replacing default canonical 'https://nshr.dha.go.ke/fhir' with '${{ env.HAPI_FHIR_BASE_URL }}' in sushi-config.yaml"
+          sed -i "s|https://nshr.dha.go.ke/fhir|${{ env.HAPI_FHIR_BASE_URL }}|g" sushi-config.yaml
           echo "Updated sushi-config.yaml:"
           cat sushi-config.yaml
 
