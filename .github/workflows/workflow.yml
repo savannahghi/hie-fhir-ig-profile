@@ -12,7 +12,7 @@ jobs:
     
     strategy:
       matrix:
-        environment: [testing]
+        environment: [testing, staging, prod]
 
     environment:
       name: ${{ matrix.environment }}
