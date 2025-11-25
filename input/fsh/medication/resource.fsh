@@ -5,6 +5,7 @@ Title: "HIE Medication"
 Description: "R4B Medication profiled for HIE directories, e-prescribing, and dispensing. Focus on stable identifiers, clinical code, status, form, ingredients with strength, manufacturer, and batch."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

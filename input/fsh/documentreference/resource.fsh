@@ -5,6 +5,7 @@ Title: "HIE DocumentReference"
 Description: "R4B DocumentReference constrained for HIE exchange. Requires strong typing, subject linkage, and well-formed attachments."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>HIE DocumentReference</b></p><p>Constrained DocumentReference for interoperable registry and retrieval. Focus on status, type, subject, authorship, security labelling, and attachment hygiene.</p></div>"
 

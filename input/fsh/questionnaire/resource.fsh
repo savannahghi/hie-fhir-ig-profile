@@ -25,6 +25,7 @@ Title: "HIE Questionnaire"
 Description: "R4B Questionnaire profiled for HIE data capture. Emphasizes status, metadata, subject typing, stable linkIds, clear item typing, conditional logic, and controlled answer options."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

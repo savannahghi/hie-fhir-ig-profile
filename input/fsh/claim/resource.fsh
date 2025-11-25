@@ -5,6 +5,7 @@ Title: "HIE Claim"
 Description: "R4B Claim constrained for HIE submission and exchange. Emphasizes core administrative data, patient, provider, insurer, billable period, coverage, diagnosis, items, and totals."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

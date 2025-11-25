@@ -5,6 +5,7 @@ Title: "HIE ServiceRequest"
 Description: "R4B ServiceRequest constrained for HIE ordering and referral. Emphasizes status, intent, code, subject, reasons, timing, requester, performers, and context."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

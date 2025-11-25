@@ -15,6 +15,7 @@ Title: "HIE QuestionnaireResponse"
 Description: "R4B QuestionnaireResponse profiled for HIE capture. Emphasizes linkage to Questionnaire, subject and encounter context, authorship, and structured item answers."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

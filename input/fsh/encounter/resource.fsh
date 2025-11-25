@@ -20,6 +20,7 @@ Description: "An interaction between a patient and healthcare providers to deliv
 * identifier MS
 * identifier.use from $identifier-use (required)
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>HIE Encounter</b></p><p>Constrained Encounter for interoperable workflows. Focus on status, class, type, subject, participants, reasons, episode of care, service provider, basedOn, period, and locations</p></div>"
 

@@ -5,6 +5,7 @@ Title: "HIE Consent"
 Description: "R4B Consent profiled for HIE workflows, emphasizing clear scope, category, subject, policy, and computable provisions."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
