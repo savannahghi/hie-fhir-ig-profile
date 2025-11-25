@@ -10,7 +10,7 @@ Expression: "dosageInstruction.exists() or dispenseRequest.exists()"
 
 Profile: HIEMedicationRequest
 Parent: MedicationRequest
-Id: hie-medication-request
+Id: hie-medicationrequest
 Title: "HIE MedicationRequest"
 Description: "R4B MedicationRequest constrained for HIE ordering and e-prescribing. Focus on status, intent, medication, subject, timing, requester, reasons, dosage, dispense, substitution, and coverage."
 * ^status = #active

@@ -1,9 +1,9 @@
 RuleSet: SharedIdentifierRules
-* identifier 1..
-  * type 1..
-  * type only HIECodeableConcept
-  * system 1..
-  * use 1..
-  * assigner MS
-  * assigner only Reference(HIEOrganization)
-  * assigner ^type.profile = Canonical(HIEReference)
+* identifier.type 1..1
+* identifier.type only HIECodeableConcept
+* identifier.system 1..1
+* identifier.use 1..1
+* identifier.assigner MS
+* identifier.value 1..1 MS
+* identifier.assigner only Reference(HIEOrganization)
+* identifier.assigner ^type.profile = Canonical(HIEReference)

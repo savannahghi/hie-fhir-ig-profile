@@ -1,6 +1,6 @@
 Alias: $UoM = http://unitsofmeasure.org
 Alias: $v2-0203 = http://hl7.org/fhir/ValueSet/identifier-type
-Alias: $administrative-gender = http://hl7.org/fhir/administrative-gender
+Alias: $administrative-gender = http://hl7.org/fhir/ValueSet/administrative-gender
 Alias: $v2-0131 = http://hl7.org/fhir/ValueSet/patient-contactrelationship
 Alias: $identifier-type = http://hl7.org/fhir/ValueSet/identifier-type
 Alias: $identifier-use = http://hl7.org/fhir/ValueSet/identifier-use
@@ -34,3 +34,4 @@ Alias: $doc-typecodes    = http://hl7.org/fhir/ValueSet/doc-typecodes
 Alias: $security-labels  = http://hl7.org/fhir/ValueSet/security-labels
 Alias: $q-operator     = http://hl7.org/fhir/ValueSet/questionnaire-enable-operator
 Alias: $q-item-control = http://hl7.org/fhir/ValueSet/questionnaire-item-control
+Alias: $all-patient-ids = https://ilm-hie.dha.go.ke/ocl/orgs/MOH-KENYA/collections/kenya-patient-identifiers|v1.0.0

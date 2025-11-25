@@ -33,7 +33,6 @@ Description: "R4B Practitioner constrained for HIE directories and clinical attr
 
 
 * gender 1..1 MS
-* gender from $administrative-gender (required)
 
 * birthDate 0..1
 

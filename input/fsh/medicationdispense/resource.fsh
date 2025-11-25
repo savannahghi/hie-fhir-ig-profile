@@ -5,7 +5,7 @@ Expression: "whenPrepared.exists() or whenHandedOver.exists()"
 
 Profile: HIEMedicationDispense
 Parent: MedicationDispense
-Id: hie-medication-dispense
+Id: hie-medicationdispense
 Title: "HIE MedicationDispense"
 Description: "R4B MedicationDispense for HIE fulfillment. Focus on status, medication, subject, authorship, quantity, daysSupply, timing, performer, prescription linkage, and substitution."
 * ^status = #active
