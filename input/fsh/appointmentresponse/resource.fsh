@@ -5,6 +5,7 @@ Title: "HIE AppointmentResponse"
 Description: "R4B AppointmentResponse constrained for HIE scheduling responses, requiring clear linkage to the appointment, a well-typed actor, and a participant status."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

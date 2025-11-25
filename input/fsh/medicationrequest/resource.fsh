@@ -15,6 +15,7 @@ Title: "HIE MedicationRequest"
 Description: "R4B MedicationRequest constrained for HIE ordering and e-prescribing. Focus on status, intent, medication, subject, timing, requester, reasons, dosage, dispense, substitution, and coverage."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

@@ -5,6 +5,7 @@ Title: "HIE DiagnosticReport"
 Description: "R4B DiagnosticReport constrained for HIE capture and exchange."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

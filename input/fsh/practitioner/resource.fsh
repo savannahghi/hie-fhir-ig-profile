@@ -5,6 +5,7 @@ Title: "HIE Practitioner"
 Description: "R4B Practitioner constrained for HIE directories and clinical attribution. Focus on identifiers, name, telecom, gender, qualifications, and communication."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">

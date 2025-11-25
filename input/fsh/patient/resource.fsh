@@ -5,6 +5,7 @@ Title: "HIE Patient"
 Description: "R4B Patient constrained for HIE workflows."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>HIE Patient</b></p><p>Patient profile for HIE workflows. Focus on identifiers, demographics, telecom, contacts, communication, managing organization, and GP.</p></div>"
 

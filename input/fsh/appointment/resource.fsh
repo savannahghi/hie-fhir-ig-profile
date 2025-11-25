@@ -5,6 +5,7 @@ Title: "HIE Appointment"
 Description: "R4B Appointment constrained for HIE scheduling, requiring clear status, timing, participants, and reason context."
 * ^status = #active
 
+* ^language = #en
 * ^text.status = #generated
 * ^text.div = """
 <div xmlns="http://www.w3.org/1999/xhtml">
