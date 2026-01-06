@@ -42,6 +42,7 @@ Description: "R4B Condition constrained for HIE capture and exchange."
 
 * code 1..1 MS
 * code only HIECodeableConcept
+* code from ICD11Codes (required)
 
 * bodySite 0..* 
 * bodySite only HIECodeableConcept
