@@ -33,7 +33,6 @@ Description: "A Reference that is resolvable, with display for UX."
 * ^status = #active
 * reference 1..1 MS
 * type 0..1
-* display 1..1 MS
 
 // HIE Annotation
 Profile: HIEAnnotation
