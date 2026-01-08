@@ -1,6 +1,6 @@
-ValueSet: OrganizationIdentifiersVs
-Id: hie-organization-identifier-types
-Title: "Organization Identifier Types"
+ValueSet: HIEOrganisationIdentifierType
+Id: hie-organisation-identifier-type
+Title: "Organization Identifier Value Sets"
 Description: "Identifier types used  to identify healthcare organizations in HIE"
 * ^status = #active
-* include HIEIdentifierCodeSystem#MFLCODE
+* include codes from system HIEOrganisationIdentifierCodeSystem
