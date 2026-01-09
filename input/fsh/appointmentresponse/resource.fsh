@@ -1,6 +1,6 @@
 Profile: HIEAppointmentResponse
 Parent: AppointmentResponse
-Id: hie-appointmentresponse
+Id: appointmentresponse
 Title: "HIE AppointmentResponse"
 Description: "R4B AppointmentResponse constrained for HIE scheduling responses, requiring clear linkage to the appointment, a well-typed actor, and a participant status."
 * ^status = #active

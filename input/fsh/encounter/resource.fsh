@@ -1,10 +1,10 @@
 // Encounter Invariants
-Invariant: hie-enc-reason-present
+Invariant: enc-reason-present
 Description: "Provide at least one reasonCode or reasonReference"
 Severity: #error
 Expression: "reasonCode.exists() or reasonReference.exists()"
 
-Invariant: hie-enc-participant-has-actor
+Invariant: enc-participant-has-actor
 Description: "Participant must reference an actor when type is present"
 Severity: #error
 Expression: "participant.where(type.exists()).all(individual.exists())"
@@ -12,7 +12,7 @@ Expression: "participant.where(type.exists()).all(individual.exists())"
 // Encounter Profile
 Profile: HIEEncounter
 Parent: Encounter
-Id: hie-encounter
+Id: encounter
 Title: "HIE Encounter"
 Description: "An interaction between a patient and healthcare providers to deliver services or assess health status."
 * ^status = #active
@@ -108,5 +108,5 @@ Description: "An interaction between a patient and healthcare providers to deliv
 * location.location ^type.profile = Canonical(HIEReference)
 
 // Apply invariants
-* obeys hie-enc-reason-present
-* obeys hie-enc-participant-has-actor
+* obeys enc-reason-present
+* obeys enc-participant-has-actor

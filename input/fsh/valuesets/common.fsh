@@ -1,5 +1,5 @@
 ValueSet: HIEIdentifierType
-Id: hie-identifier-type
+Id: identifier-type
 Title: "Resource Identifier Value Sets"
 Description: "A list of all codes, system and display for resource identifiers"
 * ^status = #active

@@ -1,6 +1,6 @@
 Profile: HIEAppointment
 Parent: Appointment
-Id: hie-appointment
+Id: appointment
 Title: "HIE Appointment"
 Description: "R4B Appointment constrained for HIE scheduling, requiring clear status, timing, participants, and reason context."
 * ^status = #active

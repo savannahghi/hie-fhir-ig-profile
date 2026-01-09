@@ -1,5 +1,5 @@
 ValueSet: HIEOrganisationIdentifierType
-Id: hie-organisation-identifier-type
+Id: organisation-identifier-type
 Title: "Organization Identifier Value Sets"
 Description: "Identifier types used  to identify healthcare organizations in HIE"
 * ^status = #active

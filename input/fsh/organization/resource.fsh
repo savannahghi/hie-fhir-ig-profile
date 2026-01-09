@@ -1,6 +1,6 @@
 Profile: HIEOrganization
 Parent: Organization
-Id: hie-organization
+Id: organization
 Title: "HIE Organization"
 Description: "Organization profile for with shared core rules"
 * ^status = #active

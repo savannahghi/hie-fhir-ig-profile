@@ -3,14 +3,14 @@ Alias: $mr-intent = http://hl7.org/fhir/ValueSet/medicationrequest-intent
 Alias: $mr-category = http://hl7.org/fhir/ValueSet/medicationrequest-category
 Alias: $req-priority = http://hl7.org/fhir/ValueSet/request-priority
 
-Invariant: hie-mr-has-dosage-or-dispense
+Invariant: mr-has-dosage-or-dispense
 Description: "Provide at least one dosageInstruction or a dispenseRequest"
 Severity: #error
 Expression: "dosageInstruction.exists() or dispenseRequest.exists()"
 
 Profile: HIEMedicationRequest
 Parent: MedicationRequest
-Id: hie-medicationrequest
+Id: medicationrequest
 Title: "HIE MedicationRequest"
 Description: "R4B MedicationRequest constrained for HIE ordering and e-prescribing. Focus on status, intent, medication, subject, timing, requester, reasons, dosage, dispense, substitution, and coverage."
 * ^status = #active

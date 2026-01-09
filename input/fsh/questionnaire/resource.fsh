@@ -1,26 +1,26 @@
-Invariant: hie-q-has-items
+Invariant: q-has-items
 Description: "Questionnaire must have at least one root item"
 Severity: #error
 Expression: "item.exists()"
 
-Invariant: hie-q-unique-linkid
+Invariant: q-unique-linkid
 Description: "linkId values must be unique within the questionnaire"
 Severity: #error
 Expression: "item.select(linkId).isDistinct()"
 
-Invariant: hie-q-group-no-answers
+Invariant: q-group-no-answers
 Description: "Group items do not have answers, initial, or answer value sets"
 Severity: #error
 Expression: "(type != 'group') or (answerOption.empty() and answerValueSet.empty() and initial.empty())"
 
-Invariant: hie-q-leaf-answerable
+Invariant: q-leaf-answerable
 Description: "Non-group, non-display items must be answerable or descriptive"
 Severity: #warning
 Expression: "(type in {'group','display'}) or (answerOption.exists() or answerValueSet.exists() or type.exists())"
 
 Profile: HIEQuestionnaire
 Parent: Questionnaire
-Id: hie-questionnaire
+Id: questionnaire
 Title: "HIE Questionnaire"
 Description: "R4B Questionnaire profiled for HIE data capture. Emphasizes status, metadata, subject typing, stable linkIds, clear item typing, conditional logic, and controlled answer options."
 * ^status = #active
@@ -53,8 +53,8 @@ Description: "R4B Questionnaire profiled for HIE data capture. Emphasizes status
 
 // Items (root)
 * item 1..* MS
-* item obeys hie-q-unique-linkid
-* obeys hie-q-has-items
+* item obeys q-unique-linkid
+* obeys q-has-items
 
 * item.linkId 1..1 MS
 * item.text 0..1 MS
@@ -75,8 +75,8 @@ Description: "R4B Questionnaire profiled for HIE data capture. Emphasizes status
 * item.enableBehavior 0..1
 * item.enableBehavior ^short = "any or all"
 
-* item obeys hie-q-group-no-answers
-* item obeys hie-q-leaf-answerable
+* item obeys q-group-no-answers
+* item obeys q-leaf-answerable
 
 * item.enableWhen.operator from $q-operator (required)
 

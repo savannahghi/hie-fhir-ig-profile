@@ -1,6 +1,6 @@
 Profile: HIEComposition
 Parent: Composition
-Id: hie-composition
+Id: composition
 Title: "HIE Composition"
 Description: "This represents the logical grouping of related clinical information within HIE"
 * insert SharedIdentifierRules

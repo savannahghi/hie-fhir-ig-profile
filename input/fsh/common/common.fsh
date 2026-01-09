@@ -1,6 +1,6 @@
 Profile: HIEHumanName
 Parent: HumanName
-Id: hie-human-name
+Id: human-name
 Title: "HIE HumanName"
 Description: "A specialized human name data type with stricter cardinalities."
 * family 1..1 MS
@@ -10,7 +10,7 @@ Description: "A specialized human name data type with stricter cardinalities."
 
 Profile: HIEContactPoint
 Parent: ContactPoint
-Id: hie-contact-point
+Id: contact-point
 Title: "HIE ContactPoint"
 Description: "A custom contact point with stricter cardinality"
 * system 1..1 MS

@@ -1,6 +1,6 @@
 Profile: HIECondition
 Parent: Condition
-Id: hie-condition
+Id: condition
 Title: "HIE Condition"
 Description: "R4B Condition constrained for HIE capture and exchange."
 * ^status = #active
