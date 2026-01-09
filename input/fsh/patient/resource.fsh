@@ -1,6 +1,6 @@
 Profile: HIEPatient
 Parent: Patient
-Id: hie-patient
+Id: patient
 Title: "HIE Patient"
 Description: "R4B Patient constrained for HIE workflows."
 * ^status = #active

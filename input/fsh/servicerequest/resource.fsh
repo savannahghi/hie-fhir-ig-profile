@@ -1,6 +1,6 @@
 Profile: HIEServiceRequest
 Parent: ServiceRequest
-Id: hie-servicerequest
+Id: servicerequest
 Title: "HIE ServiceRequest"
 Description: "R4B ServiceRequest constrained for HIE ordering and referral. Emphasizes status, intent, code, subject, reasons, timing, requester, performers, and context."
 * ^status = #active

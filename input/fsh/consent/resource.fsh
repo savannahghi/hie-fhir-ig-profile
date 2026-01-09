@@ -1,6 +1,6 @@
 Profile: HIEConsent
 Parent: Consent
-Id: hie-consent
+Id: consent
 Title: "HIE Consent"
 Description: "R4B Consent profiled for HIE workflows, emphasizing clear scope, category, subject, policy, and computable provisions."
 * ^status = #active

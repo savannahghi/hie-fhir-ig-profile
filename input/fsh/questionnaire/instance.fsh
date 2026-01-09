@@ -12,7 +12,7 @@ Description: "HIE questionnaire for demographics, symptoms, and visit intent"
 
   <ul>
     <li>Status: active</li>
-    <li>Versioned URL: http://example.org/Questionnaire/hie-q-example</li>
+    <li>Versioned URL: http://example.org/Questionnaire/q-example</li>
     <li>Root groups: Demographics, Symptoms, Visit</li>
   </ul>
 
@@ -27,7 +27,7 @@ Description: "HIE questionnaire for demographics, symptoms, and visit intent"
 """
 
 * status = #active
-* url = "http://example.org/Questionnaire/hie-q-example"
+* url = "http://example.org/Questionnaire/q-example"
 * name = "HIE_Q_Demo_Symptoms_Visit"
 * title = "HIE Intake Questionnaire"
 * date = "2025-11-20"

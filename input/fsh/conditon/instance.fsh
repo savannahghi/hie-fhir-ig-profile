@@ -120,7 +120,7 @@ Description: "Encounter diagnosis of headache, moderate severity"
 * category[0].coding[0].code = #encounter-diagnosis
 * category[0].coding[0].display = "Encounter Diagnosis"
 
-* severity.coding[0].system = "http://example.org/fhir/CodeSystem/hie-condition-severity-cs"
+* severity.coding[0].system = "http://example.org/fhir/CodeSystem/condition-severity-cs"
 * severity.coding[0].code = #moderate
 * severity.coding[0].display = "Moderate"
 

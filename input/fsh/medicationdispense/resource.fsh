@@ -1,11 +1,11 @@
-Invariant: hie-md-has-when
+Invariant: md-has-when
 Description: "Provide whenPrepared or whenHandedOver"
 Severity: #warning
 Expression: "whenPrepared.exists() or whenHandedOver.exists()"
 
 Profile: HIEMedicationDispense
 Parent: MedicationDispense
-Id: hie-medicationdispense
+Id: medicationdispense
 Title: "HIE MedicationDispense"
 Description: "R4B MedicationDispense for HIE fulfillment. Focus on status, medication, subject, authorship, quantity, daysSupply, timing, performer, prescription linkage, and substitution."
 * ^status = #active
@@ -74,7 +74,7 @@ Description: "R4B MedicationDispense for HIE fulfillment. Focus on status, medic
 
 * whenPrepared 0..1
 * whenHandedOver 0..1
-* obeys hie-md-has-when
+* obeys md-has-when
 
 * dosageInstruction 1..* MS
 

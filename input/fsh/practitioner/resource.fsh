@@ -1,6 +1,6 @@
 Profile: HIEPractitioner
 Parent: Practitioner
-Id: hie-practitioner
+Id: practitioner
 Title: "HIE Practitioner"
 Description: "R4B Practitioner constrained for HIE directories and clinical attribution. Focus on identifiers, name, telecom, gender, qualifications, and communication."
 * ^status = #active

@@ -1,6 +1,6 @@
 Profile: HIEAllergyIntolerance
 Parent: AllergyIntolerance
-Id: hie-allergyintolerance
+Id: allergyintolerance
 Title: "HIE AllergyIntolerance"
 Description: "R4B AllergyIntolerance constrained for HIE capture and exchange."
 * ^status = #active

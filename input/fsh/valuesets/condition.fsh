@@ -6,7 +6,7 @@ Description: "All codes from ICD-11"
 * include codes from system http://id.who.int/icd/release/11/mms
 
 ValueSet: HIEConditionSeverity
-Id: hie-condition-severity
+Id: condition-severity
 Title: "HIE Condition Severity"
 Description: "Local ValueSet of condition severity."
 * ^status = #active

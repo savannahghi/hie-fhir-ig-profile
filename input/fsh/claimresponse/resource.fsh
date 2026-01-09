@@ -1,6 +1,6 @@
 Profile: HIEClaimResponse
 Parent: ClaimResponse
-Id: hie-claimresponse
+Id: claimresponse
 Title: "HIE ClaimResponse"
 Description: "R4B ClaimResponse constrained for HIE payer adjudication exchanges. Focus on request linkage, parties, outcome, adjudication details, totals, and payment."
 * ^status = #active

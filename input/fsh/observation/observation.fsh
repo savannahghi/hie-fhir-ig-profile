@@ -1,6 +1,6 @@
 Profile: HIEObservation
 Parent: Observation
-Id: hie-observation
+Id: observation
 Title: "HIE Observation"
 Description: "Observation is a Kenya HIE representation of Observation FHIR resource to be used within KHIE"
 * ^version = "0.1.0-r4b"

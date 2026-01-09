@@ -1,16 +1,16 @@
-Invariant: hie-qr-item-has-answer-or-children
+Invariant: qr-item-has-answer-or-children
 Description: "Each item must contain an answer or nested items"
 Severity: #warning
 Expression: "item.exists() implies (item.answer.exists() or item.item.exists())"
 
-Invariant: hie-qr-answer-has-value-or-children
+Invariant: qr-answer-has-value-or-children
 Description: "Each answer must have a value or nested items"
 Severity: #error
 Expression: "answer.exists() implies answer.all(value.exists() or item.exists())"
 
 Profile: HIEQuestionnaireResponse
 Parent: QuestionnaireResponse
-Id: hie-questionnaireresponse
+Id: questionnaireresponse
 Title: "HIE QuestionnaireResponse"
 Description: "R4B QuestionnaireResponse profiled for HIE capture. Emphasizes linkage to Questionnaire, subject and encounter context, authorship, and structured item answers."
 * ^status = #active
@@ -60,13 +60,13 @@ Description: "R4B QuestionnaireResponse profiled for HIE capture. Emphasizes lin
 * partOf ^type.profile = Canonical(HIEReference)
 
 * item 1..* MS
-* obeys hie-qr-item-has-answer-or-children
+* obeys qr-item-has-answer-or-children
 * item.linkId 1..1 MS
 * item.definition 0..1
 * item.text 0..1 MS
 
 * item.answer 0..* MS
-* obeys hie-qr-answer-has-value-or-children
+* obeys qr-answer-has-value-or-children
 * item.answer.value[x] 0..1
 * item.answer.item 0..*
 * item.item 0..*

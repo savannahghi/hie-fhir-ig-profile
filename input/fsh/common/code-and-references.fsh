@@ -1,11 +1,11 @@
 // Invariants
 
-Invariant: hie-cc-text-or-code
+Invariant: cc-text-or-code
 Description: "Text is optional, coding is required"
 Severity: #warning
 Expression: "coding.exists()"
 
-Invariant: hie-cr-at-least-one
+Invariant: cr-at-least-one
 Description: "Provide concept or reference, at least one"
 Severity: #error
 Expression: "concept.exists() or reference.exists()"
@@ -13,7 +13,7 @@ Expression: "concept.exists() or reference.exists()"
 // HIE CodeableConcept
 Profile: HIECodeableConcept
 Parent: CodeableConcept
-Id: hie-codeable-concept
+Id: codeable-concept
 Title: "HIE CodeableConcept"
 Description: "A CodeableConcept for HIE use. Codes are required, text is optional."
 * ^status = #active
@@ -22,12 +22,12 @@ Description: "A CodeableConcept for HIE use. Codes are required, text is optiona
   * code 1..1
   * display 1..1
 * text 0..1
-* obeys hie-cc-text-or-code
+* obeys cc-text-or-code
 
 // HIE Reference (datatype profile)
 Profile: HIEReference
 Parent: Reference
-Id: hie-reference
+Id: reference
 Title: "HIE Reference"
 Description: "A Reference that is resolvable, with display for UX."
 * ^status = #active
@@ -37,7 +37,7 @@ Description: "A Reference that is resolvable, with display for UX."
 // HIE Annotation
 Profile: HIEAnnotation
 Parent: Annotation
-Id: hie-annotation
+Id: annotation
 Title: "HIE Annotation"
 Description: "A text note with author and time."
 * ^status = #active
@@ -49,7 +49,7 @@ Description: "A text note with author and time."
 // HIE CodeableReference
 Profile: HIECodeableReference
 Parent: CodeableReference
-Id: hie-codeable-reference
+Id: codeable-reference
 Title: "HIE CodeableReference"
 Description: "A CodeableReference constrained for HIE use."
 * ^status = #active
@@ -57,4 +57,4 @@ Description: "A CodeableReference constrained for HIE use."
 * reference only HIEReference
 * concept MS
 * reference MS
-* obeys hie-cr-at-least-one
+* obeys cr-at-least-one

@@ -1,5 +1,5 @@
 CodeSystem: HIEConditionSeverityCS
-Id: hie-condition-severity-cs
+Id: condition-severity-cs
 Title: "HIE Condition Severity Codes"
 Description: "Local severity codes."
 * ^status = #active

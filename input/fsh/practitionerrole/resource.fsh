@@ -1,6 +1,6 @@
 Profile: HIEPractitionerRole
 Parent: PractitionerRole
-Id: hie-practitionerrole
+Id: practitionerrole
 Title: "HIE PractitionerRole"
 Description: "R4B PractitionerRole for HIE directories, scheduling, and attribution. Emphasizes identifiers, practitioner, organization, role codes, specialties, service locations, telecom, and availability."
 * ^status = #active

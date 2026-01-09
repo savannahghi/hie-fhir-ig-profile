@@ -1,6 +1,6 @@
 Profile: HIEClaim
 Parent: Claim
-Id: hie-claim
+Id: claim
 Title: "HIE Claim"
 Description: "R4B Claim constrained for HIE submission and exchange. Emphasizes core administrative data, patient, provider, insurer, billable period, coverage, diagnosis, items, and totals."
 * ^status = #active

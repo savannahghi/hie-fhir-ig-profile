@@ -1,6 +1,6 @@
 Profile: HIEDiagnosticReport
 Parent: DiagnosticReport
-Id: hie-diagnosticreport
+Id: diagnosticreport
 Title: "HIE DiagnosticReport"
 Description: "R4B DiagnosticReport constrained for HIE capture and exchange."
 * ^status = #active
